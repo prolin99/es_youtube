@@ -33,7 +33,7 @@ function div_3d($title="",$main="",$kind="raised",$style="",$other=""){
 	return $main;
 }
 
-function get_youtube_rss($keyword) {
+function get_youtube_rss($keyword ,$admin=0 ) {
 	//取得 youtube RSS 資料
 	global $xoopsModuleConfig ;
 	
@@ -61,6 +61,7 @@ function get_youtube_rss($keyword) {
  		if ($author = $item->get_author()) {
 			$author_name =  $author->get_name();
 		}	
+		
 		//再次檢查關鍵字 
 		if   ( strstr($item->get_title() , $keyword)   or   strstr($author_name  , $keyword)  ) {
 			//不在隱藏的影片
@@ -74,12 +75,16 @@ function get_youtube_rss($keyword) {
 				$data[$i]['author']= $author_name;
 				$data[$i]['descript']= $descript;
  
-			}
-
-			
- 
+			}else{
+ 				if ($admin) {
+					$data[$i]['video']= $item->get_title() ;
+					$data[$i]['author']= $author_name;
+					$data[$i]['deny']= 1;
+				}	
+			}	
 		}
     }
+ 
     return $data ;
 
 			

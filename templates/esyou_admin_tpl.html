@@ -7,7 +7,9 @@
 最近的的影片，如果不想要秀出該影片，把篇名加入偏好設定中。<br/>
 <{foreach  key=key item=video   from= $data.video }>
 <div id="div_<{$key}>"  class="row-fluid">
-<{$key}><span class="badge badge-info">(<{$video.author}>) </span><a href='<{$video.url}>' target='video'><{$video.video}></a><br/>
+<{$key}><span class="label label-info">(<{$video.author}>) </span><a href='<{$video.url}>' target='video'><{$video.video}></a>
+<{if ($video.deny)}><span class="label label-important">(不顯示)</span><{/if}>  
+<br/>
 </div>
 <{/foreach}>
 

@@ -17,7 +17,7 @@ include_once "header.php";
  
 /*-----------執行動作判斷區----------*/
 	$my_key_word = $xoopsModuleConfig['es_you_keyword'] ;		
-	$data['video'] =get_youtube_rss($my_key_word) ;
+	$data['video'] =get_youtube_rss($my_key_word ,1 ) ;
  
  
 /*-----------秀出結果區--------------*/
