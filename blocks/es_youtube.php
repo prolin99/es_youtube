@@ -36,10 +36,11 @@ function youtube_show() {
 		
 	$words = preg_split("/[=&]+/", $video_url )  ;
 	if ($words[0]=='http://www.youtube.com/watch?v'  ) 
-		$youtube_arr=  '<p class="text-center"><iframe width="525" height="360" src="http://www.youtube.com/embed/'.$words[1].'" frameborder="0" allowfullscreen TITLE="' .$youtube[$ti]['video'] .'" ></iframe></p>&nbsp;' ;	
+		$youtube_url=  '<p class="text-center"><iframe width="525" height="360" src="http://www.youtube.com/embed/'.$words[1].'" frameborder="0" allowfullscreen TITLE="' .$youtube[$ti]['video'] .'" ></iframe></p>' ;	
 	
-	echo   $youtube_arr ;
-	
+	//echo   $youtube_arr ;
+	$block['html'] =$youtube_url ;
+	return  $block ;
 }	
 
 

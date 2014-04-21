@@ -55,9 +55,9 @@ $modversion['blocks'][1]['file'] = "es_youtube.php";
 $modversion['blocks'][1]['name'] = 'youtube 影音';
 $modversion['blocks'][1]['description'] = '顯示本校影片';
 $modversion['blocks'][1]['show_func'] = "youtube_show";
-//$modversion['blocks'][1]['template'] = "youtube_show.html";
+$modversion['blocks'][1]['template'] = "youtube_show.html";
 //$modversion['blocks'][1]['edit_func'] = "youtube_edit";
-$modversion['blocks'][1]['options'] = "30";
+//$modversion['blocks'][1]['options'] = "30";
 
 
 

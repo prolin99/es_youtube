@@ -17,6 +17,7 @@ include_once(dirname(__FILE__).'/class/autoloader.php');
 
 
 /********************* 預設函數 *********************/
+/*
 //圓角文字框
 function div_3d($title="",$main="",$kind="raised",$style="",$other=""){
 	$main="<table style='width:auto;{$style}'><tr><td>
@@ -32,6 +33,8 @@ function div_3d($title="",$main="",$kind="raised",$style="",$other=""){
 	</td></tr></table>";
 	return $main;
 }
+*/
+
 
 function get_youtube_rss($keyword ,$admin=0 ) {
 	//取得 youtube RSS 資料
