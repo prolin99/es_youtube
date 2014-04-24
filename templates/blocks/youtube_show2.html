@@ -1,0 +1,25 @@
+<div class="row-fluid">
+<script type="text/javascript" src="<{$xoops_url}>/modules/tadtools/jwplayer/jwplayer.js"></script>
+
+<div id="myElement"   class="text-center"></div>
+
+<script type='text/javascript'>
+	jwplayer('myElement').setup({
+	'flashplayer' : '<{$xoops_url}>/modules/tadtools/jwplayer/jwplayer.flash.swf',
+	'controlbar' : "bottom" ,
+	'width': '525' ,
+	'height': '400' ,
+  	'playlist.positon' : "bottom" ,
+  	'playlist.size' : '90' ,
+
+  	"playlist": [
+  <{foreach  key=key item=video   from= $block }>
+  	{
+  		'file' :  '<{$video.url}>' ,
+  		'title' : '<{$video.video}>'
+  	},	
+   <{/foreach}>
+   	]
+  	});
+</script>
+</div>

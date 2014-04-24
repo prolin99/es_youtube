@@ -51,13 +51,20 @@ $modversion['templates'][$i]['description'] = 'esyou_admin_tpl.html';
 
 //---區塊設定---//
 $modversion['blocks'] = array();
+$i= 1 ;
 $modversion['blocks'][1]['file'] = "es_youtube.php";
 $modversion['blocks'][1]['name'] = 'youtube 影音';
-$modversion['blocks'][1]['description'] = '顯示本校影片';
+$modversion['blocks'][1]['description'] = '隨機呈現一段本校影片';
 $modversion['blocks'][1]['show_func'] = "youtube_show";
 $modversion['blocks'][1]['template'] = "youtube_show.html";
 //$modversion['blocks'][1]['edit_func'] = "youtube_edit";
 //$modversion['blocks'][1]['options'] = "30";
+$i++ ;
+$modversion['blocks'][$i]['file'] = "es_youtube2.php";
+$modversion['blocks'][$i]['name'] = 'youtube 連播';
+$modversion['blocks'][$i]['description'] = '本校影片連續播放';
+$modversion['blocks'][$i]['show_func'] = "youtube_show2";
+$modversion['blocks'][$i]['template'] = "youtube_show2.html";
 
 
 

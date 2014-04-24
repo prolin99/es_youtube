@@ -2,13 +2,8 @@
 //區塊
 include_once(dirname(dirname(__FILE__)).'/function.php');
  
-function get_xoopsModuleConfig($module_dir){
-  $modhandler = &xoops_gethandler('module');
-  $xoopsModule = &$modhandler->getByDirname($module_dir);
-  $config_handler =& xoops_gethandler('config');
-  $xoopsModuleConfig =& $config_handler->getConfigsByCat(0, $xoopsModule->getVar('mid'));	
-  return $xoopsModuleConfig ;
-}	
+
+
 
 function youtube_show() {
  // global $xoopsDB;
@@ -19,14 +14,7 @@ function youtube_show() {
 	//取得偏好設定 -- 關鍵字
   	$my_key_word = $xoopsModuleConfig['es_you_keyword'] ;				 
 	$youtube=get_youtube_rss($my_key_word) ;
-	
-/*  	
-	foreach ($youtube as $k =>$v) {
-		if  ( in_array($v['video'] , $bad)  ) {
-			unset($youtube[$k]);
-		}	
-	}	
-*/
+
 
     
  	//抽取 1 個

@@ -17,23 +17,17 @@ include_once(dirname(__FILE__).'/class/autoloader.php');
 
 
 /********************* 預設函數 *********************/
-/*
-//圓角文字框
-function div_3d($title="",$main="",$kind="raised",$style="",$other=""){
-	$main="<table style='width:auto;{$style}'><tr><td>
-	<div class='{$kind}'>
-	<h1>$title</h1>
-	$other
-	<b class='b1'></b><b class='b2'></b><b class='b3'></b><b class='b4'></b>
-	<div class='boxcontent'>
- 	$main
-	</div>
-	<b class='b4b'></b><b class='b3b'></b><b class='b2b'></b><b class='b1b'></b>
-	</div>
-	</td></tr></table>";
-	return $main;
-}
-*/
+ 
+
+if (!function_exists('get_youtube_rss')) {
+	
+function get_xoopsModuleConfig($module_dir){
+  $modhandler = &xoops_gethandler('module');
+  $xoopsModule = &$modhandler->getByDirname($module_dir);
+  $config_handler =& xoops_gethandler('config');
+  $xoopsModuleConfig =& $config_handler->getConfigsByCat(0, $xoopsModule->getVar('mid'));	
+  return $xoopsModuleConfig ;
+}	
 
 
 function get_youtube_rss($keyword ,$admin=0 ) {
@@ -48,7 +42,7 @@ function get_youtube_rss($keyword ,$admin=0 ) {
  	}	
     //由 RSS 找資料
     $query="http://gdata.youtube.com/feeds/api/videos?q=$keyword&orderby=published&max-results=30" ;
-    //$query="http://gdata.youtube.com/feeds/api/videos?q=新營國小&orderby=published&max-results=30" ;
+
 
     $simplepie->set_feed_url($query);  
     
@@ -92,4 +86,7 @@ function get_youtube_rss($keyword ,$admin=0 ) {
 
 			
 
-}	
+}
+
+
+}
